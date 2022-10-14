@@ -1,0 +1,269 @@
+<app-client-header></app-client-header>
+<main class="main">
+    <div class="mt-4"></div>
+    <div class="page-content">
+        <div class="container">
+            <div class="product-details-top">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="product-gallery product-gallery-vertical">
+                            <div class="row">
+                                <figure class="product-main-image">
+                                    <img id="product-zoom"
+                                        src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageFirst}}"
+                                        alt="product image">
+
+                                </figure><!-- End .product-main-image -->
+
+                                <div id="product-zoom-gallery" class="product-image-gallery">
+                                    <a class="product-gallery-item active" href="#">
+                                        <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageFirst}}"
+                                            alt="product side">
+                                    </a>
+
+                                    <a class="product-gallery-item">
+                                        <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageTwo}}"
+                                            alt="product cross">
+                                    </a>
+
+                                    <a class="product-gallery-item" href="#">
+                                        <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageThree}}"
+                                            alt="product with model">
+                                    </a>
+
+                                    <a class="product-gallery-item" href="#">
+                                        <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageFour}}"
+                                            alt="product back">
+                                    </a>
+                                </div><!-- End .product-image-gallery -->
+                            </div><!-- End .row -->
+                        </div><!-- End .product-gallery -->
+                    </div><!-- End .col-md-6 -->
+
+                    <div class="col-md-6">
+                        <div class="product-details">
+                            <h1 class="product-title">{{dataProduct.nameProduct}}</h1><!-- End .product-title -->
+
+                            <div class="ratings-container">
+                                <div class="ratings">
+                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                                </div><!-- End .ratings -->
+                                <a class="ratings-text" href="#product-review-link" id="review-link">( 2 Reviews )</a>
+                            </div><!-- End .rating-container -->
+
+                            <div class="product-price">
+                                ${{dataProduct.price}}
+                            </div><!-- End .product-price -->
+
+
+                            <div class="details-filter-row details-row-size">
+                                <label for="qty">Qty:</label>
+                                <div class="product-details-quantity">
+                                    <input type="number" id="qty" class="form-control" value="1" min="1" max="10"
+                                        step="1" data-decimals="0" required>
+                                </div><!-- End .product-details-quantity -->
+                            </div><!-- End .details-filter-row -->
+
+                            <div class="product-details-action">
+                                <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+
+
+                            </div><!-- End .product-details-action -->
+
+                            <div class="product-details-footer">
+
+
+                                <div class="social-icons social-icons-sm">
+                                    <span class="social-label">Share:</span>
+                                    <a href="#" class="social-icon" title="Facebook" target="_blank"><i
+                                            class="icon-facebook-f"></i></a>
+                                    <a href="#" class="social-icon" title="Twitter" target="_blank"><i
+                                            class="icon-twitter"></i></a>
+                                    <a href="#" class="social-icon" title="Instagram" target="_blank"><i
+                                            class="icon-instagram"></i></a>
+                                    <a href="#" class="social-icon" title="Pinterest" target="_blank"><i
+                                            class="icon-pinterest"></i></a>
+                                </div>
+                            </div><!-- End .product-details-footer -->
+                        </div><!-- End .product-details -->
+                    </div><!-- End .col-md-6 -->
+                </div><!-- End .row -->
+            </div><!-- End .product-details-top -->
+
+            <div class="product-details-tab">
+                <ul class="nav nav-pills justify-content-center" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="product-desc-link" data-toggle="tab" href="#product-desc-tab"
+                            role="tab" aria-controls="product-desc-tab" aria-selected="true">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-info-link" data-toggle="tab" href="#product-info-tab" role="tab"
+                            aria-controls="product-info-tab" aria-selected="false">Additional information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-shipping-link" data-toggle="tab" href="#product-shipping-tab"
+                            role="tab" aria-controls="product-shipping-tab" aria-selected="false">Comment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="product-review-link" data-toggle="tab" href="#product-review-tab"
+                            role="tab" aria-controls="product-review-tab" aria-selected="false">Reviews</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="product-desc-tab" role="tabpanel"
+                        aria-labelledby="product-desc-link">
+                        <div class="product-desc-content">
+                            <h3>Image product</h3>
+                            <div class="col-12 row">
+                                <div class="col-3">
+                                    <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageFirst}}"
+                                        alt="product side">
+                                </div>
+                                <div class="col-3">
+                                    <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageTwo}}"
+                                        alt="product side">
+
+                                </div>
+                                <div class="col-3">
+                                    <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageThree}}"
+                                        alt="product side">
+                                </div>
+                                <div class="col-3">
+                                    <img src="http://localhost:8080/api/public/downloadFile/{{dataProduct.imageFour}}"
+                                        alt="product side">
+                                </div>
+                            </div>
+
+
+                            <h3>Content</h3>
+
+                            <p>{{dataDetail.content}}</p>
+
+                        </div><!-- End .product-desc-content -->
+                    </div><!-- .End .tab-pane -->
+                    <div class="tab-pane fade" id="product-info-tab" role="tabpanel"
+                        aria-labelledby="product-info-link">
+                        <div class="product-desc-content">
+                            <h3>Information</h3>
+                            <ul>
+                                <li>Card reader: {{dataDetail.cardReader}}</li>
+                                <li>Chip Set: {{dataDetail.chipSet}}</li>
+                                <li>Color: {{dataDetail.color}}</li>
+                                <li>Expansion slot: {{dataDetail.expansionSlot}} </li>
+                                <li>Hard drive: {{dataDetail.hardDrive}} </li>
+                                <li>Maximum capacity: {{dataDetail.maximumCapacity}}</li>
+                                <li>Number of slot: {{dataDetail.numberOfSlot}}</li>
+                                <li>Optical drive: {{dataDetail.opticalDrive}}</li>
+                                <li>Part number: {{dataDetail.partNumber}}</li>
+                                <li>Processor: {{dataDetail.processor}}</li>
+                                <li>Ram: {{dataDetail.ram}}</li>
+                                <li>Vga: {{dataDetail.vga}}</li>
+                            </ul>
+                        </div><!-- End .product-desc-content -->
+                    </div><!-- .End .tab-pane -->
+                    <div class="tab-pane fade" id="product-shipping-tab" role="tabpanel"
+                        aria-labelledby="product-shipping-link">
+                        <div class="product-desc-content">
+                            <h3>Comment</h3>
+                            <div class="review">
+                                <div class="col-12 row">
+                                    <div class="col-7">
+                                        <div class="row no-gutters">
+                                            <div class="col-auto">
+                                                <h4><a href="#">Samanta J.</a></h4>
+                                                <div class="ratings-container">
+                                                    <img src="assets/client/images/avatar/avatar5.png" class="img-circle col-10 "  alt="User Image">
+                                                </div><!-- End .rating-container -->
+                                                
+                                            </div><!-- End .col -->
+                                            <div class="col">
+
+                                                <div class="review-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
+                                                        cum dolores assumenda asperiores facilis porro reprehenderit
+                                                        animi culpa atque blanditiis commodi perspiciatis doloremque,
+                                                        possimus, explicabo, autem fugit beatae quae voluptas!</p>
+                                                </div><!-- End .review-content -->
+
+                                            </div><!-- End .col-auto -->
+                                        </div><!-- End .row -->
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <label for="comment">Comment *</label>
+                                            <input type="text" class="form-control" id="id-comment"
+                                                name="comment" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-footer">
+                                            <button type="button" class="btn btn-outline-primary-2">
+                                                <span>REVIEW</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+                                        </div><!-- End .form-footer -->
+                                    </div>
+                                </div>
+
+                            </div><!-- End .review -->
+                        </div><!-- End .product-desc-content -->
+                    </div><!-- .End .tab-pane -->
+                    <div class="tab-pane fade" id="product-review-tab" role="tabpanel"
+                        aria-labelledby="product-review-link">
+                        <div class="reviews">
+                            <h3>Reviews</h3>
+                            <div class="review">
+                                <div class="col-12 row">
+                                    <div class="col-7">
+                                        <div class="row no-gutters">
+                                            <div class="col-auto">
+                                                <h4><a href="#">Samanta J.</a></h4>
+                                                <div class="ratings-container">
+                                                    <img src="assets/client/images/avatar/avatar5.png" class="img-circle col-10 "  alt="User Image">
+                                                </div><!-- End .rating-container -->
+                                                
+                                            </div><!-- End .col -->
+                                            <div class="col">
+
+                                                <div class="review-content">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
+                                                        cum dolores assumenda asperiores facilis porro reprehenderit
+                                                        animi culpa atque blanditiis commodi perspiciatis doloremque,
+                                                        possimus, explicabo, autem fugit beatae quae voluptas!</p>
+                                                </div><!-- End .review-content -->
+
+                                            </div><!-- End .col-auto -->
+                                        </div><!-- End .row -->
+                                    </div>
+                                    <div class="col-5">
+                                        <div class="form-group">
+                                            <label for="point">Point (100đ) *</label>
+                                            <input type="text" class="form-control" id="id-point"
+                                                name="point" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-group">
+                                            <label for="review">Review *</label>
+                                            <input type="text" class="form-control" id="id-review"
+                                                name="review" required>
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-footer">
+                                            <button type="button" class="btn btn-outline-primary-2">
+                                                <span>REVIEW</span>
+                                                <i class="icon-long-arrow-right"></i>
+                                            </button>
+                                        </div><!-- End .form-footer -->
+                                    </div>
+                                </div>
+
+                            </div><!-- End .review -->
+
+                        </div><!-- End .reviews -->
+                    </div><!-- .End .tab-pane -->
+                </div><!-- End .tab-content -->
+            </div><!-- End .product-details-tab -->
+
+        </div><!-- End .container -->
+    </div><!-- End .page-content -->
+</main><!-- End .main -->
+<app-client-footer></app-client-footer>
